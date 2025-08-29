@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'INFO - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="info.ico">
+    <style>
+        .contact-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .contact-title {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: #1976D2;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 1rem;
+            color: #2196F3;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #2196F3;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            background: #2196F3;
+            color: white;
+        }
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="language-selector">
+            <a href="#" data-lang="fr" class="active">Français</a>
+            <span class="separator">|</span>
+            <a href="#" data-lang="en">English</a>
+        </div>
+        <h1>
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <img src="./info.ico" alt="Logo L'INFO" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/assets/Info/SVG/ic_fluent_info_24_regular.svg'">
+                L'INFO
+            </a>
+        </h1>
+    </header>
+
+    <main class="contact-content">
+        <h1 class="contact-title">Contactez-nous</h1>
+        
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Sujet</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+
+        <div class="contact-info">
+            <h2>Autres moyens de nous contacter</h2>
+            <p>Email : contact@linfo.fr</p>
+            <p>Téléphone : 01 23 45 67 89</p>
+            <p>Adresse : 123 Avenue de la République, 75011 Paris</p>
+        </div>
+
+        <a href="index.html" class="back-link">Retour à l'accueil</a>
+    </main>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

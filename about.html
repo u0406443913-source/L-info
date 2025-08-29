@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'INFO - À propos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="info.ico">
+    <style>
+        .about-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .about-title {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .about-section {
+            margin-bottom: 2rem;
+        }
+        .about-section h2 {
+            color: #2196F3;
+            margin-bottom: 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 1rem;
+            color: #2196F3;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #2196F3;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            background: #2196F3;
+            color: white;
+        }
+        .team-member {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="language-selector">
+            <a href="#" data-lang="fr" class="active">Français</a>
+            <span class="separator">|</span>
+            <a href="#" data-lang="en">English</a>
+        </div>
+        <h1>
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <img src="./info.ico" alt="Logo L'INFO" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/assets/Info/SVG/ic_fluent_info_24_regular.svg'">
+                L'INFO
+            </a>
+        </h1>
+    </header>
+
+    <main class="about-content">
+        <h1 class="about-title">À propos de L'INFO</h1>
+        
+        <div class="about-section">
+            <h2>Notre mission</h2>
+            <p>L'INFO est un agrégateur d'actualités innovant qui rassemble les meilleures sources d'information françaises en un seul endroit. Notre mission est de vous permettre d'accéder facilement à une information diversifiée et de qualité, adaptée à vos centres d'intérêt et à votre localisation.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Notre approche</h2>
+            <p>Nous croyons en l'importance d'une information pluraliste et accessible. Notre plateforme agrège les contenus des plus grands médias français et propose une expérience de lecture fluide et personnalisée. Grâce à notre système de géolocalisation, nous vous proposons des actualités pertinentes de votre région.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Nos valeurs</h2>
+            <ul>
+                <li>Transparence dans la sélection des sources</li>
+                <li>Respect de la vie privée des utilisateurs</li>
+                <li>Diversité des points de vue</li>
+                <li>Innovation technologique au service de l'information</li>
+            </ul>
+        </div>
+
+        <div class="about-section">
+            <h2>Notre technologie</h2>
+            <p>L'INFO utilise des technologies de pointe pour vous offrir la meilleure expérience possible :</p>
+            <ul>
+                <li>Agrégation en temps réel des flux RSS</li>
+                <li>Géolocalisation intelligente</li>
+                <li>Interface utilisateur intuitive</li>
+                <li>Support multilingue (Français/Anglais)</li>
+            </ul>
+        </div>
+
+        <div class="about-section">
+            <h2>Nos partenaires médias</h2>
+            <p>Nous collaborons avec les plus grands noms de la presse française pour vous offrir une couverture complète de l'actualité : Le Monde, Le Figaro, Libération, Les Échos, et bien d'autres.</p>
+        </div>
+
+        <a href="index.html" class="back-link">Retour à l'accueil</a>
+    </main>
+</body>
+</html>

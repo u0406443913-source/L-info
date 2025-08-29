@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="siteTitle">L'INFO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="info.ico">
+</head>
+<body>
+    <header>
+        <div id="geoNotification" class="geo-notification" style="display: none;">
+            <span data-translate="geoMessage">Nous utilisons votre position pour vous montrer les actualités de votre région</span>
+        </div>
+        <div class="language-selector">
+            <a href="#" data-lang="fr" class="active">Français</a>
+            <span class="separator">|</span>
+            <a href="#" data-lang="en">English</a>
+        </div>
+        <div class="header-title-container">
+            <div class="datetime">
+                <div class="date" data-translate="currentDate">Vendredi 29 août 2025</div>
+                <div class="time"><span data-translate="time">Heure</span>: 11h51 (Paris)</div>
+            </div>
+            <h1><img src="./info.ico" alt="Logo L'INFO" class="header-logo" onerror="this.src='https://raw.githubusercontent.com/microsoft/fluentui-system-icons/master/assets/Info/SVG/ic_fluent_info_24_regular.svg'">L'INFO</h1>
+            <div class="auth-buttons">
+                <a href="#" class="auth-button login">
+                    <svg class="login-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1"/>
+                        <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1"/>
+                        <path d="M12 12c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="none" stroke="currentColor" stroke-width="1"/>
+                    </svg>
+                    <span data-translate="login">Se connecter</span>
+                </a>
+                <a href="#" class="auth-button register"><span data-translate="signup">Créer un compte</span></a>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" data-translate="searchPlaceholder" placeholder="Rechercher des actualités...">
+            <button type="button" class="clear-search" data-translate="clearSearch" aria-label="Effacer la recherche">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <button id="searchButton" data-translate="searchButton">Rechercher</button>
+        </div>
+    </header>
+    <main>
+        <h2 class="latest-news-title" data-translate="latestNews">Dernières actualités françaises</h2>
+        <div id="latestResults"></div>
+        <div id="results"></div>
+    </main>
+    <div class="sidebar">
+        <p class="copyright">&copy; 2025 <span data-translate="siteTitle">L'INFO</span></p>
+        <nav class="footer-links">
+            <a href="mentions-legales.html" data-translate="legalNotice">Mentions légales</a>
+            <a href="privacy-policy.html" data-translate="privacyPolicy">Politique de confidentialité</a>
+            <a href="contact.html" data-translate="contact">Contact</a>
+            <a href="about.html" data-translate="about">À propos</a>
+        </nav>
+    </div>
+
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img class="modal-image" src="" alt="">
+                <h2 class="modal-title"></h2>
+                <div class="modal-source"></div>
+                <div class="modal-text"></div>
+            </div>
+            <div class="modal-footer">
+                <a class="original-link" href="" target="_blank">Lire l'article original</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="english-sources.js"></script>
+    <script src="datetime.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
