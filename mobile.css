@@ -78,19 +78,33 @@
 
     /* Sidebar/Footer */
     .sidebar {
-        padding: 1rem;
-        position: relative;
+        padding: 0.5rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 100;
     }
 
     .footer-links {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
     }
 
     .footer-links a {
-        padding: 0.5rem;
-        display: block;
-        border-bottom: 1px solid #eee;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+        border: none;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+        padding-bottom: 0.3rem;
     }
 
     /* Modal */
@@ -123,7 +137,8 @@
 
     /* Ajustements pour éviter le chevauchement avec la barre de navigation mobile */
     main {
-        padding-bottom: 80px;
+        padding-bottom: 100px;
+        min-height: calc(100vh - 100px);
     }
 
     /* Améliorations pour les appareils très petits */
