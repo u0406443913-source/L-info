@@ -1,0 +1,226 @@
+/* Styles spécifiques pour les appareils mobiles */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 1rem;
+    }
+
+    .header-title-container {
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        padding: 0;
+    }
+
+    .datetime {
+        position: static;
+        text-align: center;
+        order: 2;
+    }
+
+    h1 {
+        position: static;
+        transform: none;
+        order: 1;
+        font-size: 1.5rem;
+    }
+
+    .auth-buttons {
+        position: static;
+        order: 3;
+        margin: 1rem 0;
+        justify-content: center;
+    }
+
+    /* Barre de recherche */
+    .search-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 1rem 0;
+    }
+
+    #searchBar {
+        font-size: 16px; /* Évite le zoom sur iOS */
+        padding: 0.8rem;
+    }
+
+    #searchButton {
+        font-size: 16px;
+        padding: 0.8rem 1rem;
+    }
+
+    .clear-search {
+        right: 4.5rem;
+    }
+
+    /* Articles */
+    #results, #latestResults {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .article {
+        margin-bottom: 1rem;
+    }
+
+    .article-image {
+        height: 180px;
+    }
+
+    .article-title {
+        font-size: 1.1rem;
+    }
+
+    .article-description {
+        font-size: 0.9rem;
+    }
+
+    /* Sidebar/Footer */
+    .sidebar {
+        padding: 1rem;
+        position: relative;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-links a {
+        padding: 0.5rem;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        margin: 1rem auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-title {
+        font-size: 1.3rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-image {
+        max-height: 200px;
+    }
+
+    /* Améliorations tactiles */
+    .auth-button, 
+    .search-button, 
+    .article, 
+    .footer-links a {
+        min-height: 44px; /* Taille minimale pour les zones tactiles */
+    }
+
+    /* Ajustements pour éviter le chevauchement avec la barre de navigation mobile */
+    main {
+        padding-bottom: 80px;
+    }
+
+    /* Améliorations pour les appareils très petits */
+    @media (max-width: 360px) {
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        .article-title {
+            font-size: 1rem;
+        }
+
+        .article-description {
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/* Optimisations pour les tablettes */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #results, #latestResults {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .article-image {
+        height: 220px;
+    }
+}
+
+/* Amélioration de l'accessibilité tactile */
+@media (hover: none) {
+    .article:hover {
+        transform: none;
+    }
+
+    .auth-button:hover {
+        transform: none;
+    }
+
+    /* Effet de feedback tactile */
+    .article:active,
+    .auth-button:active,
+    .footer-links a:active {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* Support du mode sombre du système */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    header,
+    .article,
+    .modal-content,
+    .sidebar {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+
+    .article-title {
+        color: #e0e0e0;
+    }
+
+    .article-description {
+        color: #b0b0b0;
+    }
+
+    .article-source {
+        color: #888;
+    }
+
+    #searchBar {
+        background-color: #3d3d3d;
+        color: #e0e0e0;
+        border-color: #4d4d4d;
+    }
+
+    #searchButton {
+        background-color: #3d3d3d;
+        color: #e0e0e0;
+        border-color: #4d4d4d;
+    }
+
+    .footer-links a {
+        color: #b0b0b0;
+    }
+
+    .auth-button {
+        background-color: #3d3d3d;
+        color: #e0e0e0;
+        border-color: #4d4d4d;
+    }
+}
