@@ -2,46 +2,77 @@
 @media (max-width: 768px) {
     /* Header */
     header {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .header-title-container {
+        display: flex;
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
         position: relative;
         padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .language-selector {
+        margin-bottom: 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .datetime {
-        position: static;
+        width: 100%;
         text-align: center;
-        order: 2;
+        margin: 0.5rem 0;
+        position: relative;
+        left: 0;
     }
 
     h1 {
-        position: static;
-        transform: none;
-        order: 1;
+        margin: 0.5rem 0;
         font-size: 1.5rem;
+        position: relative;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .auth-buttons {
-        position: static;
-        order: 3;
-        margin: 1rem 0;
+        display: flex;
         justify-content: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    .auth-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
     }
 
     /* Barre de recherche */
     .search-container {
         width: 100%;
         max-width: 100%;
-        margin: 1rem 0;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        position: relative;
     }
 
     #searchBar {
+        flex-grow: 1;
         font-size: 16px; /* Évite le zoom sur iOS */
         padding: 0.8rem;
+        border-right: none;
+        -webkit-appearance: none;
+        border-radius: 0;
+        margin: 0;
     }
 
     #searchButton {
@@ -58,22 +89,44 @@
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 0.5rem;
+        margin: 0;
+        width: calc(100% - 1rem);
     }
 
     .article {
-        margin-bottom: 1rem;
+        margin: 0 0 1rem 0;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     .article-image {
+        width: 100%;
         height: 180px;
+        object-fit: cover;
+    }
+
+    .article-content {
+        padding: 0.8rem;
     }
 
     .article-title {
         font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
     }
 
     .article-description {
         font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
+    }
+
+    .article-source {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
     }
 
     /* Sidebar/Footer */
@@ -140,10 +193,22 @@
         min-height: 44px; /* Taille minimale pour les zones tactiles */
     }
 
-    /* Ajustements pour éviter le chevauchement avec la barre de navigation mobile */
+    /* Ajustements pour le contenu principal */
     main {
-        padding-bottom: 100px;
-        min-height: calc(100vh - 100px);
+        padding: 1rem 0.5rem 80px 0.5rem;
+        width: calc(100% - 1rem);
+        max-width: 100%;
+        margin: 0 auto;
+        min-height: calc(100vh - 80px);
+        overflow-x: hidden;
+    }
+
+    /* Correction du padding et des marges */
+    body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     /* Améliorations pour les appareils très petits */
