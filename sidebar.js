@@ -1,48 +1,56 @@
-// Gestion de l'affichage de la barre latérale sur mobile
+// Gestion optimisée de l'affichage de la barre latérale sur mobile
 document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.querySelector('.sidebar');
-    let lastScrollY = window.scrollY;
+    const footer = document.querySelector('.footer-links');
+    let isVisible = false;
     let ticking = false;
 
-    // Fonction pour vérifier si on est sur mobile
-    const isMobile = () => window.innerWidth <= 768;
+    // Observer les intersections avec le viewport
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // On vérifie si on est sur mobile
+            if (window.innerWidth <= 768) {
+                if (entry.isIntersecting) {
+                    sidebar.classList.add('visible');
+                    isVisible = true;
+                }
+            }
+        });
+    }, {
+        // On configure l'observer pour déclencher quand le footer est visible
+        threshold: 0.1, // 10% de visibilité suffit
+        rootMargin: '0px' // Pas de marge supplémentaire
+    });
 
-    // Fonction pour vérifier si on est proche du bas de la page
-    const isNearBottom = () => {
-        const threshold = 100; // Distance en pixels depuis le bas
-        return (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - threshold;
-    };
+    // On observe le footer
+    if (footer) {
+        observer.observe(footer);
+    }
 
-    // Gestion du scroll
-    const handleScroll = () => {
-        if (!isMobile()) {
+    // Gestion du redimensionnement
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
             sidebar.classList.remove('visible');
-            return;
+            isVisible = false;
         }
+    });
 
-        if (isNearBottom()) {
-            sidebar.classList.add('visible');
-        } else {
-            sidebar.classList.remove('visible');
-        }
-
-        lastScrollY = window.scrollY;
-    };
-
-    // Écouteur d'événement avec throttling
+    // Gestion du scroll avec performance optimisée
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                handleScroll();
+                // Vérifie si on a atteint le bas de la page
+                const isBottom = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 10;
+                
+                if (window.innerWidth <= 768) {
+                    if (isBottom && !isVisible) {
+                        sidebar.classList.add('visible');
+                        isVisible = true;
+                    }
+                }
                 ticking = false;
             });
             ticking = true;
         }
     });
-
-    // Gérer le redimensionnement de la fenêtre
-    window.addEventListener('resize', handleScroll);
-
-    // Vérification initiale
-    handleScroll();
 });
