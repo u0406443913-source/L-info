@@ -33,7 +33,9 @@
         padding: 0;
         margin: 0;
         width: 100%;
-        gap: 0.5rem;
+        gap: 0.3rem;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .language-selector {
@@ -65,15 +67,44 @@
     .auth-buttons {
         display: flex;
         justify-content: center;
-        gap: 0.5rem;
+        align-items: center;
+        gap: 0.8rem;
         margin: 0.5rem 0;
         width: 100%;
+        flex-wrap: wrap;
     }
 
     .auth-button {
-        padding: 0.5rem 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem 1rem;
         font-size: 0.9rem;
         white-space: nowrap;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        color: #333;
+        text-decoration: none;
+        min-width: 120px;
+        height: 38px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .auth-button.login {
+        background: #f8f8f8;
+    }
+
+    .auth-button.register {
+        background: #2196F3;
+        color: white;
+        border-color: #2196F3;
+    }
+
+    .login-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 0.5rem;
     }
 
     /* Barre de recherche */
@@ -244,6 +275,17 @@
     @media (max-width: 360px) {
         h1 {
             font-size: 1.2rem;
+        }
+
+        .auth-buttons {
+            gap: 0.4rem;
+        }
+
+        .auth-button {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.85rem;
+            min-width: 100px;
+            height: 36px;
         }
 
         .article-title {
